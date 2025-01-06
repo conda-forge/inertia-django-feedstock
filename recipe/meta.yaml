@@ -1,5 +1,5 @@
 {% set name = "inertia-django" %}
-{% set version = "0.6.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/inertia_django-{{ version }}.tar.gz
-  sha256: fdaf2557d357b755d7762b3fc0f39864b59071326f6524487ad0af173b4f8ec6
+  sha256: 392375ea5ba6421e61aba5ec9adbe5c9fd4560eb36b367860703bc8db1457c8f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >={{ python_min }},<4.0.0
     - django >=4
-    - requests >=2.0.0,<3.0.0
+    - requests <3,>=2
 
 test:
   imports:
