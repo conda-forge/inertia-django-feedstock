@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: inertia-django
-  version: "1.2.0"
+  version: "2.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/inertia_django-${{ version }}.tar.gz
-  sha256: 36511038caf2cbb6f54a08f17dc18fe1dd1b30c712a616672704e395b984f250
+  sha256: 89ab1ea1a1f45c3441010ecb3d0bca0b0256404d1b1f84e1f1abd734e21006f5
 
 build:
   number: 0
@@ -20,12 +20,12 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - poetry-core >=1.0.0
+    - uv-build >=0.12.5,<0.13
     - pip
   run:
     - python >=${{ python_min }},<4.0.0
-    - django >=4
-    - requests >=2.0.0,<3.0.0
+    - django >=5.2
+    # - requests >=2 # extra == "ssr"
 
 tests:
   - python:
@@ -45,4 +45,3 @@ about:
 extra:
   recipe-maintainers:
     - rxm7706
-
