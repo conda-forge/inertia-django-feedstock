@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: inertia-django
-  version: "2.0.0"
+  version: 2.0.0
 
 package:
-  name: ${{ name|lower }}
+  name: inertia-django
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/inertia_django-${{ version }}.tar.gz
+- url: https://files.pythonhosted.org/packages/source/i/inertia-django/inertia_django-${{ version }}.tar.gz
   sha256: 89ab1ea1a1f45c3441010ecb3d0bca0b0256404d1b1f84e1f1abd734e21006f5
 
 build:
